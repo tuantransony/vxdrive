@@ -143,7 +143,7 @@ const template = `
           :key="i"
         >
           <v-list-item-icon>
-            <img src="/resources/icon/peer_32.png">
+            <img src="/vxdrive/resources/icon/peer_32.png">
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title v-text="item.text"></v-list-item-title>
