@@ -1,5 +1,5 @@
 
-import libs from '/desktop/resource/js/common/service/libs.mjs';
+import libs from '/vxdrive/desktop/resource/js/common/service/libs.mjs';
 
 let QrScanner;
 let uuidv4;

@@ -1,4 +1,4 @@
-import libs from '/desktop/resource/js/common/service/libs.mjs';
+import libs from '/vxdrive/desktop/resource/js/common/service/libs.mjs';
 
 let uuidv4;
 
@@ -364,7 +364,7 @@ function createMenubarApp() {
   menubarApp.id = 'pna' + uuidv4();
   let iframe = document.createElement('iframe');
   menubarApp.iframe = iframe;
-  iframe.src = '/desktop/apps/menubar/menubar.html';
+  iframe.src = '/vxdrive/desktop/apps/menubar/menubar.html';
   iframe.id = menubarApp.id;
   //iframe.sandbox = 'allow-forms allow-scripts allow-same-origin';
   iframe.sandbox = 'allow-forms allow-scripts';
@@ -396,7 +396,7 @@ function createQRCodeScanApp() {
   qrCodeScanApp.id = 'pna' + uuidv4();
   let iframe = document.createElement('iframe');
   qrCodeScanApp.iframe = iframe;
-  iframe.src = '/desktop/apps/scan/scan.html';
+  iframe.src = '/vxdrive/desktop/apps/scan/scan.html';
   iframe.id = qrCodeScanApp.id;
   //iframe.sandbox = 'allow-forms allow-scripts allow-same-origin';
   iframe.sandbox = 'allow-forms allow-scripts';
@@ -426,7 +426,7 @@ function connectAppOnload() {
 function createConnectApp() {
   connectAppId = 'pna' + uuidv4();
   let iframe = document.createElement('iframe');
-  iframe.src = '/desktop/apps/connect/connect.html';
+  iframe.src = '/vxdrive/desktop/apps/connect/connect.html';
   iframe.id = connectAppId;
   //iframe.sandbox = 'allow-forms allow-scripts allow-same-origin';
   iframe.sandbox = 'allow-forms allow-scripts';
