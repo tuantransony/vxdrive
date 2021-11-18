@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>PCD</title>
+    <style>
+      body { 
+        margin: 0; 
+        padding: 0; 
+      }
+    </style>
+    <script type="text/javascript" src="/desktop/env.js"></script>
+  </head>
+  <body>
+    <script>
+      function getACode() {
+        return new Promise(function(resolve, reject) {
+          resolve('223344556667788');
+        });
+      }
+    </script>
+    <script type="module">
+      (async ()=> {
+        let module = await import('/desktop/apps/main/main.mjs');
+        module.default.start();
+      })();
+    </script>
+  </body>
+</html>

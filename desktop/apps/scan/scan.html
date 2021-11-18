@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="/desktop/env.js"></script>
+</head>
+<body>
+<style>
+    body { 
+      margin: 0; 
+      padding: 0; 
+      background-color: black;
+    }
+
+    #qr-video {
+        width: 100%    !important;
+        height: auto   !important;
+    }
+    .video-panel {
+        width: 100%    !important;
+        height: auto   !important;
+        position: fixed;
+    }
+
+    #toolbar-app {
+        position: fixed;
+        top: 8%;
+        left: 0;
+        width: 25%;
+        height: 60%;
+    }
+
+    .hide-scanbox {
+        display:none;
+    }
+
+    .show-scanbox-area {
+        position: absolute;
+        top: 15%;
+        left: 30%;
+        width: 40%;
+        height: 68%;
+        opacity: 0.4;
+        text-align: center;
+        color: #FFFF00;
+        border: 2px solid #FFFF00;
+    }
+
+    .show-scanbox {
+        position: absolute;
+        top: 16%;
+        left: 30%;
+        width: 40%;
+        height: 68%;
+        opacity: 0.4;
+        text-align: center;
+        color: #FFFF00;
+    }
+    .show-scanbox::before, .show-scanbox::after {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        border: 2px solid transparent;
+        width: 0;
+        height: 0;
+    }
+    .show-scanbox::before {
+        top: 0;
+        left: 0;
+        border-top-color: #FFFF00;
+        border-right-color: #FFFF00;
+        animation: borderFrames 4s infinite;
+    }
+    .show-scanbox::after {
+        bottom: 0;
+        right: 0;
+        animation: borderFrames 4s 2s infinite, colorFrames 4s 2s infinite;
+    }
+
+    @keyframes borderFrames {
+        0% {
+            width: 0;
+            height: 0;
+        }
+        25% {
+            width: 100%;
+            height: 0;
+        }
+        50% {
+            width: 100%;
+            height: 100%;
+        }
+        100% {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    @keyframes colorFrames {
+        0% {
+            border-bottom-color: #FFFF00;
+            border-left-color: #FFFF00;
+        }
+        50% {
+            border-bottom-color: #FFFF00;
+            border-left-color: #FFFF00;
+        }
+        51% {
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+        }
+        100% {
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+        }
+    }
+
+</style>
+
+
+<div class="video-panel">
+    <video id="qr-video"></video>
+    <div id="scan-box" class="hide-scanbox"> 
+        <h1 id="scan-box-header" style="font-size:10vw; color: #FFFF00;"></h1>
+    </div>
+</div>
+
+
+<div id="toolbar-app"></div>
+<script type="module">
+    import App from './scan.mjs';
+    App.start('toolbar-app').then(()=>{}).catch(()=>{});
+  </script>
+
+</body>
+</html>
