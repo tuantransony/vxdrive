@@ -235,7 +235,7 @@ function connectAppAck() {
     iframe.allowtransparency = 'true';
     iframe.style = 'width:100%;height:100%;border:none;';
 
-    let qrScanAppId = attachApp(connectAppId, '/desktop/apps/scan/scan.html', iframe);
+    let qrScanAppId = attachApp(connectAppId, '/vxdrive/desktop/apps/scan/scan.html', iframe);
 
     connectApp.ack = true;
     connectApp.qrScanAppId = qrScanAppId;
