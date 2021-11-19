@@ -80,7 +80,7 @@ window.addEventListener("message", receiveEvent, false);
 function receiveEvent(event) {
   let data = event.data;
   console.log('ZZZZZZZZZZZZZZZZZZZZ BBBBBBBBBBBBBBBBBBBBB receiveEvent', event.origin, 'BBBBBBBBBB='+event.origin.indexOf('http://127.0.0.1'), data);
-  if (data.type && eventHandlers[data.type] && event.origin.indexOf('http://127.0.0.1')==0) {
+  if (data.type && eventHandlers[data.type]){// && event.origin.indexOf('http://127.0.0.1')==0) {
     eventHandlers[data.type](event);
   }
 }
